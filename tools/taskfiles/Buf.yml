@@ -1,0 +1,29 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  clean:
+    desc: Clean up generated files
+    cmds:
+      - find pkg/api -type f -name '*.pb.go' -delete
+      - find pkg/api -type f -name '*.connect.go' -delete
+
+  generate:
+    aliases: [gen]
+    desc: Generate API code from api/ and authzed
+    deps: [install]
+    cmds:
+      - task: .api
+
+  .api:
+    desc: Generate Account Management API code
+    internal: true
+    vars:
+      OUTPUT_DIR: pkg/api
+    sources:
+      - 'api/**/*.proto'
+    generates:
+      - '{{.OUTPUT_DIR}}/**/*.pb.go'
+    cmds:
+      - buf generate --template buf.gen.yaml

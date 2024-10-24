@@ -3,9 +3,21 @@ module github.com/guimochila/microservices-with-go
 go 1.23.2
 
 require (
+	github.com/golang/protobuf v1.5.2
+	github.com/hashicorp/consul/api v1.30.0
+	google.golang.org/protobuf v1.35.1
+)
+
+require (
+	golang.org/x/net v0.28.0 // indirect
+	golang.org/x/text v0.17.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240814211410-ddb44dafa142 // indirect
+)
+
+require (
 	github.com/armon/go-metrics v0.4.1 // indirect
+	github.com/confluentinc/confluent-kafka-go v1.9.2
 	github.com/fatih/color v1.16.0 // indirect
-	github.com/hashicorp/consul/api v1.30.0 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-hclog v1.5.0 // indirect
@@ -19,5 +31,6 @@ require (
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	golang.org/x/exp v0.0.0-20230817173708-d852ddb80c63 // indirect
-	golang.org/x/sys v0.19.0 // indirect
+	golang.org/x/sys v0.24.0 // indirect
+	google.golang.org/grpc v1.67.1
 )
